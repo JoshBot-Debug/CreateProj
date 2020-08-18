@@ -10,7 +10,7 @@ from createproj.model.Vscode import Vscode
 class CreateProj(Cmd):
 
     __Name = "CreateProj.py"
-    __Dir = os.getcwd()+"\\"
+    __Dir = os.getcwd()+"/"
     __ProjectName = ""
 
     __Env = True
@@ -32,7 +32,7 @@ class CreateProj(Cmd):
         self.__ProjectType = Empty()
 
         externalPath = self.__Dir+"main.py"
-        folderPath = self.__Dir+self.__ProjectName.lower()+"\\"
+        folderPath = self.__Dir+self.__ProjectName.lower()+"/"
         controllerPath = folderPath+self.__ProjectName+".py"
         
 
@@ -165,5 +165,5 @@ class CreateProj(Cmd):
         path = self.makeDirectory(self.__Dir+".vscode",init=False)
         v = Vscode()
 
-        with open(path+"\\settings.json",'w') as w:
+        with open(path+"/settings.json",'w') as w:
             w.write(v.getVscode())
